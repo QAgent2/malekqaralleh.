@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتب القرالة للقانون والتحكيم</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F2854;
+  --blue: #1C4D8D;
+  --blue-md: #4988C4;
+  --sky: #BDE8F5;
+  --gray-light: #CBCBCB;
+  --gray-dark: #57595B;
+  --gray-slate: #686D76;
+  --gray-steel: #C7C8CC;
+  --gray-silver: #BFC6C4;
+  --off-white: #F4F5F6;
+  --charcoal: #2C3E50;
+  --gold: #D4AF37;
+  --grad-hero: linear-gradient(135deg,#0F2854,#1C4D8D);
+  --grad-accent: linear-gradient(120deg,#1C4D8D,#4988C4);
+  --grad-lux: linear-gradient(145deg,#0F2854,#1C4D8D 50%,#4988C4);
+  --sh-sm: 0 2px 4px rgba(15,40,84,.08);
+  --sh-md: 0 4px 8px rgba(15,40,84,.12);
+  --sh-lg: 0 10px 20px rgba(15,40,84,.15);
+  --sh-xl: 0 20px 40px rgba(15,40,84,.2);
+  --sh-glow: 0 0 20px rgba(28,77,141,.3);
+  --r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;--r-xl:1rem;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--gray-steel)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px}
+body{font-family:'Cairo',sans-serif;background:var(--off-white);color:var(--charcoal);direction:rtl;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(15,40,84,.15);backdrop-filter:blur(20px);border-bottom:1px solid rgba(189,232,245,.15);transition:all .4s}
+nav.scrolled{background:rgba(15,40,84,.97);padding:.85rem 3rem;box-shadow:0 4px 30px rgba(15,40,84,.4)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:#fff}
+.logo-circle{width:46px;height:46px;background:var(--grad-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;border:2px solid rgba(189,232,245,.4);box-shadow:var(--sh-glow);flex-shrink:0}
+.logo-txt .ar{font-family:'Amiri',serif;font-size:.95rem;font-weight:700}
+.logo-txt .en{font-size:.6rem;letter-spacing:.07em;color:var(--sky);opacity:.8}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.82rem;font-weight:500;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;right:0;width:0;height:2px;background:var(--blue-md);transition:width .3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--grad-accent) !important;padding:.55rem 1.4rem;border-radius:50px;color:#fff !important;font-weight:600 !important;box-shadow:var(--sh-glow);transition:all .3s !important}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(28,77,141,.5) !important}
+.nav-cta::after{display:none !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
+
+/* MOBILE MENU */
+.mob-menu{position:fixed;inset:0;background:rgba(15,40,84,.98);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.mob-menu.open{transform:translateX(0)}
+.mob-menu a{font-family:'Amiri',serif;font-size:1.5rem;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s}
+.mob-menu a:hover{color:var(--sky)}
+.mob-close{position:absolute;top:1.5rem;left:1.5rem;background:none;border:none;color:#fff;cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:var(--grad-hero)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,rgba(73,136,196,.2),transparent 60%),radial-gradient(ellipse 60% 80% at 80% 60%,rgba(15,40,84,.6),transparent 60%)}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(189,232,245,.03) 60px,rgba(189,232,245,.03) 61px),repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(189,232,245,.03) 60px,rgba(189,232,245,.03) 61px)}
+.shape{position:absolute;border:1px solid rgba(189,232,245,.08);border-radius:50%;animation:floatShape linear infinite}
+.s1{width:400px;height:400px;top:-100px;left:-100px;animation-duration:22s}
+.s2{width:600px;height:600px;bottom:-200px;right:-150px;animation-duration:30s;animation-delay:-12s}
+.s3{width:200px;height:200px;top:40%;left:15%;animation-duration:16s;animation-delay:-6s;opacity:.5}
+@keyframes floatShape{0%{transform:rotate(0deg) scale(1)}50%{transform:rotate(180deg) scale(1.05)}100%{transform:rotate(360deg) scale(1)}}
+.hero-content{position:relative;text-align:center;color:#fff;max-width:900px;padding:2rem;animation:fadeUp 1.2s ease forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(189,232,245,.12);border:1px solid rgba(189,232,245,.25);padding:.4rem 1.2rem;border-radius:50px;font-size:.78rem;color:var(--sky);margin-bottom:1.5rem;letter-spacing:.05em;backdrop-filter:blur(10px)}
+.badge-dot{width:6px;height:6px;background:var(--sky);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-en{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.8rem);font-weight:700;letter-spacing:.05em;line-height:1.1;margin-bottom:.4rem;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero-ar{font-family:'Amiri',serif;font-size:clamp(2rem,5vw,3.6rem);font-weight:700;margin-bottom:1.5rem;color:var(--sky)}
+.hero-div{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1rem 0}
+.hero-line{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--blue-md))}
+.hero-line.r{background:linear-gradient(90deg,var(--blue-md),transparent)}
+.hero-tag{font-size:clamp(.85rem,2vw,1.1rem);color:rgba(255,255,255,.8);margin-bottom:.3rem;letter-spacing:.04em}
+.hero-tag-ar{font-family:'Amiri',serif;font-size:clamp(.95rem,2.2vw,1.25rem);color:rgba(189,232,245,.8);margin-bottom:2rem}
+.btns{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-p{background:var(--grad-accent);color:#fff;padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.9rem;box-shadow:0 8px 25px rgba(28,77,141,.5);transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(28,77,141,.65)}
+.btn-s{background:transparent;color:#fff;padding:.8rem 1.8rem;border-radius:50px;text-decoration:none;font-weight:500;font-size:.9rem;border:1px solid rgba(189,232,245,.4);transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-s:hover{background:rgba(189,232,245,.1);border-color:rgba(189,232,245,.7);transform:translateY(-2px)}
+.badges-row{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.inf-badge{background:rgba(255,255,255,.07);backdrop-filter:blur(15px);border:1px solid rgba(189,232,245,.2);border-radius:var(--r-lg);padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.85);transition:all .3s}
+.inf-badge:hover{background:rgba(189,232,245,.12);border-color:rgba(189,232,245,.4);transform:translateY(-2px)}
+.scroll-ind{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.45);font-size:.7rem;letter-spacing:.1em;animation:scrollB 2s ease-in-out infinite}
+@keyframes scrollB{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* SECTIONS */
+section{padding:5.5rem 0}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.sec-header{text-align:center;margin-bottom:3.5rem}
+.sec-label{display:inline-block;font-size:.72rem;letter-spacing:.2em;color:var(--blue-md);text-transform:uppercase;font-weight:700;margin-bottom:.6rem}
+.sec-en{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.7rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:.25rem}
+.sec-ar{font-family:'Amiri',serif;font-size:clamp(1.5rem,3.5vw,2.3rem);color:var(--blue);margin-bottom:.9rem}
+.sec-div{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:1rem}
+.div-line{width:50px;height:1px;background:var(--gray-light)}
+.div-diamond{width:8px;height:8px;background:var(--blue);transform:rotate(45deg)}
+.sec-sub{color:var(--gray-slate);font-size:.93rem;max-width:580px;margin:0 auto;line-height:1.7}
+
+/* ABOUT */
+.about{background:var(--gray-steel)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-intro{font-family:'Amiri',serif;font-size:1.08rem;line-height:1.9;color:var(--gray-dark);margin-bottom:2rem;border-right:3px solid var(--blue-md);padding-right:1.25rem}
+.principles{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.pc{background:#fff;border-radius:var(--r-lg);padding:1.15rem;border:1px solid var(--gray-light);transition:all .3s;position:relative;overflow:hidden}
+.pc::before{content:'';position:absolute;top:0;right:0;width:3px;height:0;background:var(--grad-accent);transition:height .3s}
+.pc:hover{border-color:var(--blue-md);box-shadow:var(--sh-md);transform:translateY(-3px)}
+.pc:hover::before{height:100%}
+.pc-icon{width:38px;height:38px;background:rgba(28,77,141,.08);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin-bottom:.65rem}
+.pc-icon svg{color:var(--blue)}
+.pc-ar{font-family:'Amiri',serif;font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.pc-en{font-size:.67rem;color:var(--blue-md);letter-spacing:.05em;margin-bottom:.4rem;text-transform:uppercase}
+.pc-desc{font-size:.79rem;color:var(--gray-slate);line-height:1.55}
+.atty-card{background:var(--navy);border-radius:1.5rem;overflow:hidden;position:relative;height:480px;box-shadow:var(--sh-xl)}
+.atty-card-bg{position:absolute;inset:0;background:var(--grad-lux)}
+.atty-card-pat{position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 30px,rgba(189,232,245,.03) 30px,rgba(189,232,245,.03) 31px)}
+.atty-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
+.atty-av{width:120px;height:120px;border-radius:50%;background:rgba(189,232,245,.15);border:3px solid rgba(189,232,245,.3);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.atty-av svg{color:rgba(189,232,245,.7)}
+.atty-name{font-family:'Amiri',serif;font-size:1.5rem;color:#fff;margin-bottom:.3rem}
+.atty-role{font-size:.75rem;color:var(--sky);letter-spacing:.1em;opacity:.8;margin-bottom:1.25rem}
+.atty-quote{font-family:'Amiri',serif;font-size:.95rem;color:rgba(255,255,255,.72);font-style:italic;padding:.9rem;background:rgba(189,232,245,.08);border-radius:var(--r-lg);border:1px solid rgba(189,232,245,.15);line-height:1.7}
+.atty-attr{font-size:.75rem;color:var(--sky);margin-top:.4rem;opacity:.7}
+
+/* SERVICES */
+.services{background:var(--off-white)}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.srv-card{background:#fff;border-radius:var(--r-xl);padding:1.6rem 1.35rem;border:1px solid var(--gray-light);transition:all .35s cubic-bezier(.34,1.56,.64,1);cursor:pointer;position:relative;overflow:hidden}
+.srv-card::after{content:'';position:absolute;bottom:0;right:0;left:0;height:3px;background:var(--grad-accent);transform:scaleX(0);transition:transform .3s}
+.srv-card:hover{transform:translateY(-8px);box-shadow:var(--sh-xl);border-color:var(--blue-md)}
+.srv-card:hover::after{transform:scaleX(1)}
+.srv-icon{width:52px;height:52px;background:linear-gradient(135deg,rgba(28,77,141,.08),rgba(189,232,245,.15));border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;transition:all .3s}
+.srv-card:hover .srv-icon{background:var(--grad-accent)}
+.srv-icon svg{color:var(--blue);transition:color .3s}
+.srv-card:hover .srv-icon svg{color:#fff}
+.srv-ar{font-family:'Amiri',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.srv-en{font-size:.67rem;color:var(--blue-md);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.7rem}
+.srv-desc{font-size:.8rem;color:var(--gray-slate);line-height:1.6;margin-bottom:.8rem}
+.srv-items{list-style:none;display:flex;flex-direction:column;gap:.28rem}
+.srv-items li{font-size:.75rem;color:var(--gray-dark);display:flex;align-items:center;gap:.35rem}
+.srv-items li::before{content:'';display:block;width:4px;height:4px;background:var(--blue-md);border-radius:50%;flex-shrink:0}
+.srv-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--blue);font-size:.78rem;font-weight:600;text-decoration:none;margin-top:.8rem;transition:color .3s}
+.srv-link:hover{color:var(--navy)}
+
+/* ATTORNEY */
+.attorney{background:var(--gray-steel)}
+.atty-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start}
+.atty-profile-card{background:var(--navy);border-radius:1.5rem;overflow:hidden;box-shadow:var(--sh-xl);position:sticky;top:6rem}
+.atty-ph{padding:2.25rem;background:var(--grad-lux);text-align:center}
+.atty-ph-av{width:100px;height:100px;background:rgba(189,232,245,.15);border-radius:50%;border:3px solid rgba(189,232,245,.35);display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem}
+.atty-ph-name{font-family:'Amiri',serif;font-size:1.4rem;color:#fff;margin-bottom:.25rem}
+.atty-ph-role{font-size:.72rem;color:var(--sky);letter-spacing:.09em;opacity:.8}
+.atty-pb{padding:1.35rem}
+.atty-stat{display:flex;align-items:center;gap:.7rem;padding:.65rem 0;border-bottom:1px solid rgba(189,232,245,.1)}
+.atty-stat:last-child{border-bottom:none}
+.atty-stat-ico{width:34px;height:34px;background:rgba(189,232,245,.1);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.atty-stat-ico svg{color:var(--sky)}
+.atty-stat-lbl{font-size:.67rem;color:rgba(255,255,255,.5)}
+.atty-stat-val{font-size:.83rem;color:#fff;font-weight:600}
+.phil-box{background:#fff;border-radius:var(--r-xl);padding:1.75rem;border-right:4px solid var(--blue);margin-bottom:1.75rem;box-shadow:var(--sh-sm)}
+.phil-txt{font-family:'Amiri',serif;font-size:1rem;line-height:1.9;color:var(--gray-dark);font-style:italic}
+.creds-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.75rem}
+.cred{background:#fff;border-radius:var(--r-lg);padding:1.1rem;border:1px solid var(--gray-light)}
+.cred-lbl{font-size:.65rem;letter-spacing:.1em;color:var(--blue-md);text-transform:uppercase;font-weight:700;margin-bottom:.35rem}
+.cred-ar{font-family:'Amiri',serif;font-size:.9rem;color:var(--navy);font-weight:700;margin-bottom:.15rem}
+.cred-en{font-size:.75rem;color:var(--gray-slate)}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.tag{background:rgba(28,77,141,.07);border:1px solid rgba(28,77,141,.15);border-radius:50px;padding:.3rem .85rem;font-size:.75rem;color:var(--blue);font-weight:500;transition:all .3s;cursor:default}
+.tag:hover{background:var(--blue);color:#fff}
+
+/* WHY */
+.why{background:var(--navy);position:relative;overflow:hidden}
+.why::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 10% 50%,rgba(73,136,196,.12),transparent 60%),radial-gradient(ellipse 60% 80% at 90% 30%,rgba(28,77,141,.3),transparent 60%)}
+.why .sec-en{color:#fff}
+.why .sec-ar{color:var(--sky)}
+.why .sec-label{color:var(--sky)}
+.why .sec-sub{color:rgba(255,255,255,.6)}
+.why .div-line{background:rgba(189,232,245,.3)}
+.why .div-diamond{background:var(--sky)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;position:relative}
+.why-card{background:rgba(255,255,255,.04);border:1px solid rgba(189,232,245,.1);border-radius:var(--r-xl);padding:1.75rem;transition:all .3s;backdrop-filter:blur(10px)}
+.why-card:hover{background:rgba(189,232,245,.08);border-color:rgba(189,232,245,.3);transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.why-icon{width:50px;height:50px;background:rgba(189,232,245,.1);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;border:1px solid rgba(189,232,245,.2);transition:all .3s}
+.why-card:hover .why-icon{background:rgba(73,136,196,.3);border-color:rgba(189,232,245,.5)}
+.why-icon svg{color:var(--sky)}
+.why-ar{font-family:'Amiri',serif;font-size:1.05rem;color:#fff;font-weight:700;margin-bottom:.22rem}
+.why-en{font-size:.65rem;color:var(--blue-md);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.65rem}
+.why-desc{font-size:.81rem;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--off-white)}
+.t-wrap{overflow:hidden}
+.t-track{display:flex;gap:1.25rem;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.t-card{flex:0 0 calc(33.333% - .85rem);background:#fff;border-radius:var(--r-xl);padding:1.75rem;border:1px solid var(--gray-light);position:relative;overflow:hidden;box-shadow:var(--sh-sm);transition:all .3s}
+.t-card:hover{box-shadow:var(--sh-lg);transform:translateY(-4px);border-color:var(--blue-md)}
+.t-card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;background:var(--grad-accent)}
+.qmark{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--gray-light);line-height:.8;margin-bottom:.8rem;display:block}
+.t-text{font-family:'Amiri',serif;font-size:.93rem;line-height:1.8;color:var(--gray-dark);margin-bottom:1.25rem;font-style:italic}
+.stars{color:var(--gold);font-size:.85rem;margin-bottom:.6rem;letter-spacing:.1em}
+.t-author{font-size:.77rem;color:var(--gray-slate);font-weight:600}
+.t-controls{display:flex;align-items:center;justify-content:center;gap:.9rem;margin-top:1.75rem}
+.t-btn{width:42px;height:42px;background:#fff;border:1px solid var(--gray-light);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;color:var(--blue)}
+.t-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.t-dots{display:flex;gap:.4rem}
+.dot{width:7px;height:7px;background:var(--gray-light);border-radius:50%;cursor:pointer;transition:all .3s}
+.dot.active{background:var(--blue);transform:scale(1.3)}
+
+/* FAQ */
+.faq{background:var(--gray-steel)}
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:.9rem}
+.faq-item{background:#fff;border-radius:var(--r-lg);border:1px solid var(--gray-light);overflow:hidden;transition:box-shadow .3s}
+.faq-item.open{border-color:var(--blue-md);box-shadow:var(--sh-md)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.15rem 1.4rem;cursor:pointer;user-select:none;gap:1rem}
+.faq-qtxt{font-family:'Amiri',serif;font-size:.98rem;color:var(--navy);font-weight:700;flex:1}
+.faq-toggle{width:26px;height:26px;background:rgba(28,77,141,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;color:var(--blue)}
+.faq-item.open .faq-toggle{background:var(--blue);color:#fff;transform:rotate(45deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-ans{max-height:300px}
+.faq-ans-inner{padding:0 1.4rem 1.15rem;font-size:.85rem;color:var(--gray-slate);line-height:1.75;font-family:'Amiri',serif;border-top:1px solid var(--gray-light);padding-top:.9rem;margin:0 1.4rem}
+
+/* CONTACT */
+.contact{background:var(--off-white)}
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:start}
+.form-wrap{background:#fff;border-radius:1.5rem;padding:2.25rem;box-shadow:var(--sh-lg);border:1px solid var(--gray-light)}
+.wa-badge{display:flex;align-items:center;gap:.6rem;background:#e8fdf0;border:1.5px solid #25D366;border-radius:var(--r-lg);padding:.6rem .9rem;font-size:.79rem;color:#1a7a3c;font-weight:600;margin-bottom:1.1rem}
+.fg{margin-bottom:1.1rem}
+.flabel{display:block;font-size:.79rem;color:var(--gray-dark);font-weight:600;margin-bottom:.35rem}
+.flabel span{color:var(--blue)}
+.finput,.fselect,.ftarea{width:100%;padding:.75rem .9rem;border:1.5px solid var(--gray-light);border-radius:var(--r-md);font-family:'Cairo',sans-serif;font-size:.84rem;color:var(--charcoal);background:var(--off-white);transition:all .3s;outline:none;direction:rtl}
+.finput:focus,.fselect:focus,.ftarea:focus{border-color:var(--blue-md);background:#fff;box-shadow:0 0 0 3px rgba(73,136,196,.1)}
+.finput.err,.fselect.err,.ftarea.err{border-color:#e53e3e;box-shadow:0 0 0 3px rgba(229,62,62,.1)}
+.ftarea{resize:none;height:110px}
+.ferr{font-size:.72rem;color:#e53e3e;margin-top:.28rem;display:none}
+.ferr.show{display:block}
+.privacy-note{font-size:.73rem;color:var(--gray-slate);margin-bottom:1.1rem;display:flex;align-items:flex-start;gap:.4rem}
+.privacy-note svg{flex-shrink:0;margin-top:2px;color:var(--blue-md)}
+.btn-wa{width:100%;padding:.9rem;background:linear-gradient(120deg,#1DA851,#25D366);color:#fff;border:none;border-radius:var(--r-lg);font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(37,211,102,.35);display:flex;align-items:center;justify-content:center;gap:.5rem}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(37,211,102,.5)}
+.btn-wa:disabled{opacity:.7;pointer-events:none}
+.success-box{display:none;flex-direction:column;align-items:center;text-align:center;padding:2.5rem 1.5rem;gap:.9rem}
+.success-box.show{display:flex}
+.suc-ico{width:68px;height:68px;background:#e8fdf0;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #25D366}
+.suc-title{font-family:'Amiri',serif;font-size:1.25rem;color:var(--navy);font-weight:700}
+.suc-sub{font-size:.85rem;color:var(--gray-slate);line-height:1.7}
+.suc-reset{background:none;border:1.5px solid var(--blue-md);color:var(--blue);padding:.45rem 1.35rem;border-radius:50px;font-family:'Cairo',sans-serif;font-size:.82rem;cursor:pointer;transition:all .3s;margin-top:.35rem}
+.suc-reset:hover{background:var(--blue);color:#fff}
+.info-cards{display:flex;flex-direction:column;gap:1.25rem}
+.info-card{background:#fff;border-radius:var(--r-xl);padding:1.35rem;border:1px solid var(--gray-light);box-shadow:var(--sh-sm)}
+.info-card-title{font-family:'Amiri',serif;font-size:.95rem;color:var(--navy);font-weight:700;margin-bottom:.9rem;display:flex;align-items:center;gap:.45rem}
+.info-card-title svg{color:var(--blue)}
+.info-item{display:flex;align-items:center;gap:.65rem;margin-bottom:.6rem;font-size:.84rem;color:var(--gray-dark)}
+.info-item:last-child{margin-bottom:0}
+.info-item svg{color:var(--blue-md);flex-shrink:0}
+.info-item a{color:var(--blue);text-decoration:none;font-weight:500}
+.info-item a:hover{color:var(--navy)}
+.hr-item{display:flex;justify-content:space-between;padding:.38rem 0;border-bottom:1px solid var(--gray-light);font-size:.79rem}
+.hr-item:last-child{border-bottom:none}
+.hr-day{color:var(--gray-slate)}
+.hr-time{color:var(--navy);font-weight:600}
+.hr-closed{color:#e53e3e;font-weight:600}
+
+/* FOOTER */
+footer{background:var(--navy);position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue-md),transparent)}
+.ft-top{padding:3.5rem 0 2.5rem;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
+.ft-logo{display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem;color:#fff}
+.ft-logo-circle{width:42px;height:42px;background:var(--grad-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:.95rem;border:2px solid rgba(189,232,245,.3)}
+.ft-logo-name{font-family:'Amiri',serif;font-size:.95rem}
+.ft-tagline{font-size:.77rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1.1rem;font-family:'Amiri',serif}
+.ft-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(189,232,245,.08);border:1px solid rgba(189,232,245,.15);border-radius:50px;padding:.28rem .75rem;font-size:.7rem;color:var(--sky)}
+.ft-col-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);font-weight:700;margin-bottom:1.1rem;padding-bottom:.55rem;border-bottom:1px solid rgba(189,232,245,.1)}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.ft-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;transition:color .3s;display:flex;align-items:center;gap:.35rem}
+.ft-links a:hover{color:#fff}
+.ft-links a::before{content:'›';color:var(--blue-md)}
+.ft-citem{display:flex;align-items:center;gap:.55rem;margin-bottom:.65rem;color:rgba(255,255,255,.5);font-size:.79rem}
+.ft-citem svg{color:var(--blue-md);flex-shrink:0}
+.ft-citem a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
+.ft-citem a:hover{color:#fff}
+.ft-bottom{border-top:1px solid rgba(189,232,245,.08);padding:1.35rem 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.65rem}
+.ft-copy{font-size:.76rem;color:rgba(255,255,255,.4);font-family:'Amiri',serif}
+.ft-disc{font-size:.68rem;color:rgba(255,255,255,.28);max-width:480px;text-align:left;line-height:1.5}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu.d1{transition-delay:.1s}.fu.d2{transition-delay:.2s}.fu.d3{transition-delay:.3s}.fu.d4{transition-delay:.4s}
+
+.ft-social{display:flex;gap:.6rem;margin-top:.9rem}
+.ft-social-btn{width:36px;height:36px;background:rgba(189,232,245,.08);border:1px solid rgba(189,232,245,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;transition:all .3s}
+.ft-social-btn:hover{background:var(--grad-accent);border-color:transparent;color:#fff;transform:translateY(-2px);box-shadow:var(--sh-glow)}
+.contact-social-row{display:flex;gap:.75rem;flex-wrap:wrap}
+.contact-social-btn{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.1rem;border-radius:50px;text-decoration:none;font-size:.82rem;font-weight:600;transition:all .3s;border:1.5px solid}
+.contact-social-btn.facebook{color:#1877F2;border-color:#1877F2;background:rgba(24,119,242,.06)}
+.contact-social-btn.facebook:hover{background:#1877F2;color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(24,119,242,.35)}
+.contact-social-btn.instagram{color:#E1306C;border-color:#E1306C;background:rgba(225,48,108,.06)}
+.contact-social-btn.instagram:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:transparent;color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(225,48,108,.35)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
+  .ft-top{grid-template-columns:1fr 1fr;gap:1.75rem}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem}
+  nav.scrolled{padding:.8rem 1.25rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .about-grid{grid-template-columns:1fr}
+  .atty-card{height:340px;order:-1}
+  .atty-grid{grid-template-columns:1fr}
+  .atty-profile-card{position:static}
+  .creds-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bottom{flex-direction:column;text-align:center}
+  .t-card{flex:0 0 100%}
+  .principles{grid-template-columns:1fr}
+  section{padding:3.5rem 0}
+  .btns{flex-direction:column;align-items:center}
+}
+@media(max-width:480px){
+  .srv-grid{grid-template-columns:1fr}
+  .badges-row{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-circle">MQ</div>
+    <div class="logo-txt">
+      <div class="ar">مكتب القرالة</div>
+      <div class="en">AL-QARALLEH LAW & ARBITRATION</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">عن المكتب</a></li>
+    <li><a href="#services">الخدمات</a></li>
+    <li><a href="#attorney">المحامي</a></li>
+    <li><a href="#why">لماذا نحن</a></li>
+    <li><a href="#testimonials">آراء العملاء</a></li>
+    <li><a href="#faq">الأسئلة الشائعة</a></li>
+    <li><a href="#contact" class="nav-cta">احجز استشارة</a></li>
+  </ul>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#about" onclick="closeMob()">عن المكتب</a>
+  <a href="#services" onclick="closeMob()">الخدمات القانونية</a>
+  <a href="#attorney" onclick="closeMob()">الملف الشخصي</a>
+  <a href="#why" onclick="closeMob()">لماذا نحن</a>
+  <a href="#testimonials" onclick="closeMob()">آراء العملاء</a>
+  <a href="#faq" onclick="closeMob()">الأسئلة الشائعة</a>
+  <a href="#contact" onclick="closeMob()">تواصل معنا</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
+  <div class="shape s3"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="badge-dot"></div>خبرة قانونية متميزة منذ أكثر من 12 عاماً</div>
+    <div class="hero-en">AL-QARALLEH LAW & ARBITRATION</div>
+    <div class="hero-ar">مكتب القرالة للقانون والتحكيم</div>
+    <div class="hero-div">
+      <div class="hero-line"></div>
+      <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+        <path d="M18 3v30M6 9l6 12-6 12M30 9l-6 12 6 12" stroke="#BDE8F5" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 21h12M18 21h12" stroke="#BDE8F5" stroke-width="1" stroke-linecap="round"/>
+        <circle cx="18" cy="33" r="2" fill="#4988C4"/>
+      </svg>
+      <div class="hero-line r"></div>
+    </div>
+    <div class="hero-tag">Excellence in Legal Representation & Strategic Counsel</div>
+    <div class="hero-tag-ar">التميز في التمثيل القانوني والاستشارة الاستراتيجية</div>
+    <div class="btns">
+      <a href="#contact" class="btn-p">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        احجز استشارة الآن
+      </a>
+      <a href="#services" class="btn-s">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 8 8 12 12 16"/><line x1="16" y1="12" x2="8" y2="12"/></svg>
+        استعرض خدماتنا
+      </a>
+    </div>
+    <div class="badges-row">
+      <div class="inf-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        +12 عاماً من التميز القانوني
+      </div>
+      <div class="inf-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        جامعة مؤتة - كلية الحقوق
+      </div>
+      <div class="inf-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        خدمة متمحورة حول العميل
+      </div>
+      <div class="inf-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        خدمات قانونية شاملة
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <span>اكتشف خبرتنا</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">ABOUT US</div>
+      <div class="sec-en">AL-QARALLEH LAW OFFICE</div>
+      <div class="sec-ar">عن مكتب القرالة للمحاماة</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="about-intro fu">في مكتب القرالة للقانون والتحكيم، نؤمن بأن التمثيل القانوني الاستثنائي ينبع من فهم عميق لاحتياجات عملائنا، والإعداد الدقيق، والتنفيذ الاستراتيجي. تأسست ممارستنا على يد المحامي مالك سامي القرالة، وبُنيت على أساس من النزاهة والخبرة والتفاني الراسخ لتحقيق أفضل النتائج الممكنة لعملائنا.</p>
+        <div class="principles">
+          <div class="pc fu d1">
+            <div class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+            <div class="pc-ar">النزاهة أولاً</div>
+            <div class="pc-en">INTEGRITY FIRST</div>
+            <div class="pc-desc">الممارسة الأخلاقية هي حجر الزاوية في سمعتنا ومحور عملنا في كل قضية.</div>
+          </div>
+          <div class="pc fu d2">
+            <div class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+            <div class="pc-ar">التميز الاستراتيجي</div>
+            <div class="pc-en">STRATEGIC EXCELLENCE</div>
+            <div class="pc-desc">نتوقع التحديات القانونية ونضع استراتيجيات استباقية للنجاح قبل وقوعها.</div>
+          </div>
+          <div class="pc fu d3">
+            <div class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="pc-ar">شراكة مع العميل</div>
+            <div class="pc-en">CLIENT PARTNERSHIP</div>
+            <div class="pc-desc">أهدافك تصبح مهمتنا. نعمل معك بشكل وثيق في كل مرحلة من قضيتك.</div>
+          </div>
+          <div class="pc fu d4">
+            <div class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div class="pc-ar">خبرة شاملة</div>
+            <div class="pc-en">COMPREHENSIVE EXPERTISE</div>
+            <div class="pc-desc">من التقاضي إلى التحكيم، نهجنا متعدد التخصصات يضمن استشارات سلسة.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fu d2">
+        <div class="atty-card">
+          <div class="atty-card-bg"></div>
+          <div class="atty-card-pat"></div>
+          <div class="atty-inner">
+            <div class="atty-av"><svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="rgba(189,232,245,0.7)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="atty-name">المحامي مالك سامي القرالة</div>
+            <div class="atty-role">FOUNDER & SENIOR COUNSEL</div>
+            <div class="atty-quote">"العدالة لا تُمارَس فحسب — بل تُسعى إليها بشغف ودقة."<div class="atty-attr">— مالك سامي القرالة</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">LEGAL SERVICES</div>
+      <div class="sec-en">OUR LEGAL SERVICES</div>
+      <div class="sec-ar">خدماتنا القانونية</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+      <p class="sec-sub">نقدم طيفاً كاملاً من الخدمات القانونية المصممة وفق ظروفك وأهدافك الفريدة</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card fu d1">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6l9-3 9 3v6c0 5-4 9-9 10C7 21 3 17 3 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="srv-ar">القضايا المدنية</div>
+        <div class="srv-en">CIVIL LITIGATION</div>
+        <div class="srv-desc">تمثيل العملاء في النزاعات المدنية المعقدة بدقة استراتيجية وإعداد شامل.</div>
+        <ul class="srv-items">
+          <li>نزاعات العقود والمطالبات</li>
+          <li>قضايا الملكية والعقارات</li>
+          <li>النزاعات التجارية</li>
+          <li>المطالبات بالأضرار والتعويضات</li>
+          <li>المناصرة الاستئنافية</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d2">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1M6 8H5a4 4 0 000 8h1M6 12h12M9 8v8M15 8v8"/></svg></div>
+        <div class="srv-ar">التحكيم</div>
+        <div class="srv-en">ARBITRATION SERVICES</div>
+        <div class="srv-desc">تمثيل متخصص في التحكيم لحل النزاعات بكفاءة ومهنية عالية.</div>
+        <ul class="srv-items">
+          <li>التحكيم التجاري</li>
+          <li>التحكيم الدولي</li>
+          <li>صياغة شروط التحكيم</li>
+          <li>خدمات الوساطة والتسوية</li>
+          <li>تنفيذ أحكام التحكيم</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d3">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <div class="srv-ar">القانون التجاري والشركات</div>
+        <div class="srv-en">CORPORATE & COMMERCIAL</div>
+        <div class="srv-desc">توجيه الأعمال عبر التأسيس والمعاملات والامتثال بالاستشارة الاستراتيجية.</div>
+        <ul class="srv-items">
+          <li>تأسيس الشركات وهيكلتها</li>
+          <li>صياغة العقود والتفاوض</li>
+          <li>الاندماجات والاستحواذات</li>
+          <li>حوكمة الشركات</li>
+          <li>الامتثال التنظيمي</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d4">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="srv-ar">القانون العقاري</div>
+        <div class="srv-en">REAL ESTATE LAW</div>
+        <div class="srv-desc">خدمات قانونية شاملة للمعاملات العقارية والنزاعات والتطوير.</div>
+        <ul class="srv-items">
+          <li>شراء العقارات وبيعها</li>
+          <li>التحقق من صكوك الملكية</li>
+          <li>عقود الإيجار والتأجير</li>
+          <li>نزاعات الملكية العقارية</li>
+          <li>تطوير العقارات</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d1">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><circle cx="17" cy="7" r="2.5"/></svg></div>
+        <div class="srv-ar">قانون الأسرة</div>
+        <div class="srv-en">FAMILY LAW</div>
+        <div class="srv-desc">تمثيل متعاطف واستراتيجي في القضايا الأسرية الحساسة بحكمة وإتقان.</div>
+        <ul class="srv-items">
+          <li>إجراءات الطلاق</li>
+          <li>حضانة الأطفال والزيارة</li>
+          <li>النفقة والمساعدة</li>
+          <li>النزاعات في الميراث</li>
+          <li>عقود الزواج والأحوال الشخصية</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d2">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 10h10M7 7h4"/></svg></div>
+        <div class="srv-ar">قانون العمل</div>
+        <div class="srv-en">EMPLOYMENT LAW</div>
+        <div class="srv-desc">حماية الحقوق والمصالح في نزاعات مكان العمل والمسائل العمالية.</div>
+        <ul class="srv-items">
+          <li>عقود التوظيف</li>
+          <li>الفصل التعسفي</li>
+          <li>التمييز في مكان العمل</li>
+          <li>النزاعات العمالية</li>
+          <li>مفاوضات التوظيف</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d3">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="srv-ar">الدفاع الجنائي</div>
+        <div class="srv-en">CRIMINAL DEFENSE</div>
+        <div class="srv-desc">دفاع قوي وصارم يحمي حقوقك وحريتك بكامل الكفاءة المهنية.</div>
+        <ul class="srv-items">
+          <li>الدفاع الجنائي الشامل</li>
+          <li>إجراءات الكفالة والإفراج</li>
+          <li>التفاوض على صفقات الإقرار</li>
+          <li>التمثيل في المحاكمة</li>
+          <li>الطعون الجنائية</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d4">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="srv-ar">الاستشارات القانونية</div>
+        <div class="srv-en">LEGAL CONSULTATION</div>
+        <div class="srv-desc">مشورة قانونية متخصصة وتوجيه استراتيجي لاتخاذ قرارات مستنيرة.</div>
+        <ul class="srv-items">
+          <li>الآراء والمذكرات القانونية</li>
+          <li>مراجعة العقود وتقييمها</li>
+          <li>تقييم المخاطر القانونية</li>
+          <li>المشورة الوقائية</li>
+          <li>التخطيط الاستراتيجي القانوني</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+      <div class="srv-card fu d1">
+        <div class="srv-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/><path d="M12 8v4M12 16h.01"/></svg></div>
+        <div class="srv-ar">المحاكم العسكرية وأمن الدولة</div>
+        <div class="srv-en">MILITARY & STATE SECURITY COURTS</div>
+        <div class="srv-desc">تمثيل قانوني متخصص أمام المحاكم العسكرية ومحاكم أمن الدولة بخبرة ودراية كاملة بأحكامها وإجراءاتها.</div>
+        <ul class="srv-items">
+          <li>القضايا العسكرية والجنائية</li>
+          <li>قضايا أمن الدولة</li>
+          <li>الطعون أمام المحكمة العسكرية العليا</li>
+          <li>الدفاع عن العسكريين والمدنيين</li>
+          <li>قضايا الإرهاب والجرائم الأمنية</li>
+        </ul>
+        <a href="#contact" class="srv-link">اعرف المزيد ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATTORNEY -->
+<section class="attorney" id="attorney">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">ATTORNEY PROFILE</div>
+      <div class="sec-en">MEET YOUR ATTORNEY</div>
+      <div class="sec-ar">تعرف على محاميك</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+    </div>
+    <div class="atty-grid">
+      <div class="fu d1">
+        <div class="atty-profile-card">
+          <div class="atty-ph">
+            <div class="atty-ph-av"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="rgba(189,232,245,0.7)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="atty-ph-name">مالك سامي القرالة</div>
+            <div class="atty-ph-role">FOUNDER & SENIOR COUNSEL</div>
+          </div>
+          <div class="atty-pb">
+            <div class="atty-stat">
+              <div class="atty-stat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><div class="atty-stat-lbl">سنوات الخبرة</div><div class="atty-stat-val">+12 عاماً من الممارسة المتميزة</div></div>
+            </div>
+            <div class="atty-stat">
+              <div class="atty-stat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+              <div><div class="atty-stat-lbl">المؤهل العلمي</div><div class="atty-stat-val">كلية الحقوق - جامعة مؤتة</div></div>
+            </div>
+            <div class="atty-stat">
+              <div class="atty-stat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="atty-stat-lbl">نقابة المحامين</div><div class="atty-stat-val">عضو نقابة المحامين الأردنيين</div></div>
+            </div>
+            <div class="atty-stat">
+              <div class="atty-stat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+              <div><div class="atty-stat-lbl">اللغات</div><div class="atty-stat-val">العربية (لغة أم) • الإنجليزية (متقدم)</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fu d2">
+        <div class="phil-box">
+          <p class="phil-txt">"طوال 12 عاماً من الممارسة القانونية، كنت مسترشداً بالتزام ثابت بالتميز والنزاهة والدفاع عن العملاء. كل قضية أتولاها تحظى باهتمامي الشخصي ونهجي الاستراتيجي، مما يضمن حصول عملائي على أعلى جودة من التمثيل القانوني."</p>
+        </div>
+        <div class="sec-label" style="margin-bottom:.65rem">التعليم والمؤهلات</div>
+        <div class="creds-grid">
+          <div class="cred"><div class="cred-lbl">المؤهل الأكاديمي</div><div class="cred-ar">بكالوريوس الحقوق (LL.B)</div><div class="cred-en">Faculty of Law, Mutah University</div></div>
+          <div class="cred"><div class="cred-lbl">الترخيص المهني</div><div class="cred-ar">محامٍ مرخّص - جميع المحاكم</div><div class="cred-en">Licensed - All Jordanian Courts</div></div>
+          <div class="cred"><div class="cred-lbl">العضوية المهنية</div><div class="cred-ar">نقابة المحامين الأردنيين</div><div class="cred-en">Jordan Bar Association</div></div>
+          <div class="cred"><div class="cred-lbl">سنوات الخبرة</div><div class="cred-ar">أكثر من 12 عاماً متميزاً</div><div class="cred-en">12+ Years Distinguished Practice</div></div>
+        </div>
+        <div class="sec-label" style="margin-bottom:.65rem">مجالات التخصص</div>
+        <div class="tags">
+          <span class="tag">القضايا المدنية</span>
+          <span class="tag">التحكيم والوساطة</span>
+          <span class="tag">القانون التجاري</span>
+          <span class="tag">العقارات والملكية</span>
+          <span class="tag">قانون الأسرة</span>
+          <span class="tag">قانون العقود</span>
+          <span class="tag">قانون العمل</span>
+          <span class="tag">الدفاع الجنائي</span>
+          <span class="tag">المحاكم العسكرية وأمن الدولة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">WHY CHOOSE US</div>
+      <div class="sec-en">WHY CHOOSE AL-QARALLEH</div>
+      <div class="sec-ar">لماذا تختار مكتب القرالة</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+      <p class="sec-sub">اختيار التمثيل القانوني الصحيح أمر بالغ الأهمية. إليك ما يميزنا ويجعلنا الخيار الموثوق</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fu d1">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg></div>
+        <div class="why-ar">اهتمام شخصي مباشر</div>
+        <div class="why-en">PERSONALIZED ATTENTION</div>
+        <div class="why-desc">كل عميل يحظى باهتمام مباشر من المحامي القرالة. قضيتك لا تُفوَّض أبداً — تعمل مع مستشار ذي خبرة يفهم وضعك الفريد.</div>
+      </div>
+      <div class="why-card fu d2">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="why-ar">خبرة مثبتة +12 عاماً</div>
+        <div class="why-en">12+ YEARS EXPERIENCE</div>
+        <div class="why-desc">أكثر من عقد من الممارسة الناجحة زودنا بالمعرفة والمهارات والبصيرة الاستراتيجية اللازمة لأكثر القضايا تعقيداً.</div>
+      </div>
+      <div class="why-card fu d3">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="why-ar">تميز أكاديمي رفيع</div>
+        <div class="why-en">ACADEMIC EXCELLENCE</div>
+        <div class="why-desc">تلقى المحامي القرالة تعليمه في كلية الحقوق بجامعة مؤتة، مما يضمن تدريباً قانونياً صارماً وتطوراً مهنياً مستمراً.</div>
+      </div>
+      <div class="why-card fu d1">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div class="why-ar">نهج يتمحور حول العميل</div>
+        <div class="why-en">CLIENT-CENTERED APPROACH</div>
+        <div class="why-desc">أهدافك تصبح أولوياتنا. نستمع باهتمام، ونتواصل بشفافية، ونبقيك على اطلاع دائم في كل مرحلة من رحلتك القانونية.</div>
+      </div>
+      <div class="why-card fu d2">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M6 8h12M6 11h8"/></svg></div>
+        <div class="why-ar">خدمات قانونية شاملة</div>
+        <div class="why-en">COMPREHENSIVE SERVICES</div>
+        <div class="why-desc">من التقاضي إلى التحكيم، من القانون التجاري إلى الشؤون الأسرية — شريك قانوني موثوق لجميع احتياجاتك.</div>
+      </div>
+      <div class="why-card fu d3">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="why-ar">التميز الاستراتيجي</div>
+        <div class="why-en">STRATEGIC EXCELLENCE</div>
+        <div class="why-desc">نحن لا نتفاعل مع التحديات القانونية فحسب — بل نتوقعها. نهجنا الاستباقي يضع العملاء في موضع النجاح منذ البداية.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">TESTIMONIALS</div>
+      <div class="sec-en">CLIENT TESTIMONIALS</div>
+      <div class="sec-ar">شهادات العملاء</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+      <p class="sec-sub">أفضل مقياس لنجاحنا هو رضا عملائنا وثقتهم. إليك ما يقولونه عن تجربتهم معنا</p>
+    </div>
+    <div class="t-wrap fu">
+      <div class="t-track" id="tTrack">
+        <div class="t-card">
+          <span class="qmark">"</span>
+          <div class="t-text">تعامل المحامي القرالة مع نزاعي التجاري المعقد بمهنية استثنائية وتفكير استراتيجي. أسفر إعداده الدقيق وتواصله الواضح عن نتيجة تجاوزت توقعاتي. أنصح بخدماته بشدة لكل من يحتاج تمثيلاً قانونياً متميزاً.</div>
+          <div class="stars">★★★★★</div>
+          <div class="t-author">— صاحب عمل، عمّان</div>
+        </div>
+        <div class="t-card">
+          <span class="qmark">"</span>
+          <div class="t-text">المحامي القرالة قدم لي أفضل خدمة قانونية تعاملت معها. احترافية عالية، تواصل ممتاز ومستمر، ونتائج تفوق التوقعات. أنصح به بشدة لأي شخص يحتاج إلى تمثيل قانوني متميز وموثوق في الأردن.</div>
+          <div class="stars">★★★★★</div>
+          <div class="t-author">— عميل راضٍ، الأردن</div>
+        </div>
+        <div class="t-card">
+          <span class="qmark">"</span>
+          <div class="t-text">في قضية شؤون أسرية صعبة، أظهر المحامي القرالة ليس فقط خبرة قانونية بل تعاطفاً حقيقياً وصادقاً. هدانا عبر الإجراءات بوضوح وحقق تسوية عادلة. نحن ممتنون جداً لتفانيه معنا.</div>
+          <div class="stars">★★★★★</div>
+          <div class="t-author">— عميل قانون أسرة، الزرقاء</div>
+        </div>
+        <div class="t-card">
+          <span class="qmark">"</span>
+          <div class="t-text">معرفته بقانون التحكيم استثنائية. مثّلنا في تحكيم تجاري معقد بمهارة وثقة ودراية عالية. نحتفظ به الآن محامياً دائماً لجميع احتياجاتنا القانونية والتجارية.</div>
+          <div class="stars">★★★★★</div>
+          <div class="t-author">— عميل مؤسسي، العقبة</div>
+        </div>
+      </div>
+    </div>
+    <div class="t-controls fu">
+      <button class="t-btn" id="tPrev">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="t-dots">
+        <div class="dot active" onclick="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)"></div>
+      </div>
+      <button class="t-btn" id="tNext">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">FAQ</div>
+      <div class="sec-en">FREQUENTLY ASKED QUESTIONS</div>
+      <div class="sec-ar">الأسئلة الشائعة</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+      <p class="sec-sub">إجابات للأسئلة الشائعة حول خدماتنا القانونية وطريقة الحجز وكيفية مساعدتك</p>
+    </div>
+    <div class="faq-list fu">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">ما هي أتعاب الخدمات القانونية لديكم؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">هيكل أتعابنا شفاف ومصمم وفقاً لتعقيدات كل قضية. نقدم أسعاراً بالساعة وأسعاراً ثابتة وترتيبات احتمالية. خلال استشارتك الأولى نقدم تقديراً واضحاً للأتعاب بدون أي تكاليف مخفية.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">كيف يمكنني حجز استشارة وما هي مدة الانتظار؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">معظم طلبات الاستشارة تُجدوَل خلال 24-48 ساعة. للمسائل العاجلة تتوفر مواعيد في نفس اليوم أو اليوم التالي. تواصل معنا لمناقشة احتياجاتك وسنرتب الموعد الأنسب لك.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">هل تقدمون استشارة أولية مجانية؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">نقدم استشارة هاتفية أولية مدتها 15-20 دقيقة مجاناً لتقييم وضعك وتحديد مدى ملاءمتنا لخدمتك. هذا يضمن تمكيننا من تكريس الوقت الكافي لفهم قضيتك وتقديم التوجيه الصحيح.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">ما الوثائق التي يجب إحضارها في الاستشارة الأولى؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">يُرجى إحضار جميع الوثائق ذات الصلة: العقود والمراسلات وأوراق المحكمة وهويتك الشخصية وجدولاً زمنياً مكتوباً بالأحداث. كلما زادت المعلومات كلما كان تقييمنا أكثر فاعلية.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">هل تتعاملون مع القضايا خارج عمّان؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">نعم، نمثّل العملاء في جميع أنحاء الأردن ويمكننا تنسيق المسائل القانونية الدولية حسب الحاجة من خلال شبكتنا المهنية الواسعة والمتخصصة.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">هل معلوماتي محمية وسرية تماماً؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">بالتأكيد. تحمي السرية المهنية بين المحامي والموكل جميع اتصالاتك. تظل معلوماتك سرية تاماً ولن تُكشف دون إذنك الصريح في أي ظرف من الظروف.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-qtxt">ماذا أفعل إذا احتجت مساعدة قانونية عاجلة؟</div><div class="faq-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">تواصل معنا فوراً عبر الهاتف (+962 79 798 3872) أو واتساب وسنستجيب بسرعة لمعالجة احتياجاتك الطارئة. نُعطي الأولوية دائماً للمسائل العاجلة.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-header fu">
+      <div class="sec-label">CONTACT US</div>
+      <div class="sec-en">GET IN TOUCH</div>
+      <div class="sec-ar">تواصل معنا</div>
+      <div class="sec-div"><div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div></div>
+      <p class="sec-sub">هل أنت مستعد لمناقشة مسألتك القانونية؟ تواصل معنا لحجز استشارتك</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fu d1">
+        <div class="form-wrap" id="formWrap">
+          <div class="sec-label" style="margin-bottom:.6rem">احجز استشارتك</div>
+          <div class="wa-badge">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.104 1.51 5.833L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.992-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+            سيتم إرسال طلبك مباشرةً عبر واتساب إلى مكتب القرالة
+          </div>
+          <div class="fg">
+            <label class="flabel">الاسم الكامل <span>*</span></label>
+            <input type="text" id="fName" class="finput" placeholder="أدخل اسمك الكامل">
+            <div class="ferr" id="eName">يرجى إدخال اسمك الكامل</div>
+          </div>
+          <div class="fg">
+            <label class="flabel">رقم الهاتف <span>*</span></label>
+            <input type="tel" id="fPhone" class="finput" placeholder="+962 XX XXX XXXX" dir="ltr">
+            <div class="ferr" id="ePhone">يرجى إدخال رقم هاتف صحيح</div>
+          </div>
+          <div class="fg">
+            <label class="flabel">نوع المسألة القانونية <span>*</span></label>
+            <select id="fType" class="fselect">
+              <option value="" disabled selected>اختر نوع القضية</option>
+              <option>القضايا المدنية</option>
+              <option>التحكيم</option>
+              <option>القانون التجاري والشركات</option>
+              <option>القانون العقاري</option>
+              <option>قانون الأسرة</option>
+              <option>قانون العمل</option>
+              <option>الدفاع الجنائي</option>
+              <option>المحاكم العسكرية</option>
+              <option>أمن الدولة</option>
+              <option>الاستشارات القانونية</option>
+              <option>أخرى</option>
+            </select>
+            <div class="ferr" id="eType">يرجى اختيار نوع القضية</div>
+          </div>
+          <div class="fg">
+            <label class="flabel">وصف مختصر للمسألة <span>*</span></label>
+            <textarea id="fDesc" class="ftarea" placeholder="يُرجى وصف مسألتك القانونية باختصار..."></textarea>
+            <div class="ferr" id="eDesc">يرجى كتابة وصف مختصر للمسألة</div>
+          </div>
+          <div class="privacy-note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            معلوماتك محمية بالسرية المهنية بين المحامي والموكل وستُعامَل بسرية تامة ومطلقة
+          </div>
+          <button class="btn-wa" id="waBtn" onclick="sendWA()">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.104 1.51 5.833L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.992-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+            إرسال عبر واتساب مباشرةً
+          </button>
+        </div>
+        <!-- SUCCESS -->
+        <div class="form-wrap success-box" id="successBox">
+          <div class="suc-ico"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="suc-title">تم فتح واتساب بنجاح! ✅</div>
+          <div class="suc-sub">تم تجهيز رسالتك كاملةً في واتساب.<br>فقط اضغط <strong>إرسال</strong> وسيصلك رد من مكتبنا في أقرب وقت.</div>
+          <button class="suc-reset" onclick="resetForm()">إرسال طلب آخر</button>
+        </div>
+      </div>
+      <div class="info-cards fu d2">
+        <div class="info-card">
+          <div class="info-card-title"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.97 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>وسائل التواصل</div>
+          <div class="info-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.97 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg><a href="tel:+962797983872">+962 79 798 3872</a></div>
+          <div class="info-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>malekqaralleh21@gmail.com</span></div>
+          <div class="info-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.104 1.51 5.833L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.992-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/></svg><a href="https://wa.me/962797983872">واتساب: +962 79 798 3872</a></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>ساعات العمل الرسمية</div>
+          <div class="hr-item"><span class="hr-day">الأحد - الخميس</span><span class="hr-time">9:00 ص - 5:00 م</span></div>
+          <div class="hr-item"><span class="hr-day">السبت</span><span class="hr-time">بموعد مسبق فقط</span></div>
+          <div class="hr-item"><span class="hr-day">الجمعة</span><span class="hr-closed">مغلق</span></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>الموقع والعنوان</div>
+          <div class="info-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>عمان الجاردنز، مجمع نورة التجاري، الطابق الثالث — مكتب القرالة للقانون والتحكيم</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            تابعنا على وسائل التواصل الاجتماعي
+          </div>
+          <div class="contact-social-row">
+            <a href="https://www.facebook.com/share/1AWmVpkU6N/" target="_blank" class="contact-social-btn facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              <span>فيسبوك</span>
+            </a>
+            <a href="https://www.instagram.com/malek.qaralleh?igsh=MTZybHBuNWt5MHE1Nw==" target="_blank" class="contact-social-btn instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              <span>انستغرام</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="ft-top">
+      <div>
+        <div class="ft-logo"><div class="ft-logo-circle">MQ</div><div class="ft-logo-name">مكتب القرالة للقانون والتحكيم</div></div>
+        <div class="ft-tagline">التميز في التمثيل القانوني والاستشارة الاستراتيجية. نلتزم بتحقيق أفضل النتائج لعملائنا بنزاهة وكفاءة عالية.</div>
+        <div class="ft-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>+12 عاماً من التميز القانوني</div>
+      </div>
+      <div>
+        <div class="ft-col-title">روابط سريعة</div>
+        <ul class="ft-links">
+          <li><a href="#about">عن المكتب</a></li>
+          <li><a href="#services">الخدمات القانونية</a></li>
+          <li><a href="#attorney">الملف الشخصي</a></li>
+          <li><a href="#why">لماذا نحن</a></li>
+          <li><a href="#testimonials">آراء العملاء</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">خدماتنا القانونية</div>
+        <ul class="ft-links">
+          <li><a href="#services">القضايا المدنية</a></li>
+          <li><a href="#services">التحكيم</a></li>
+          <li><a href="#services">القانون التجاري</a></li>
+          <li><a href="#services">القانون العقاري</a></li>
+          <li><a href="#services">قانون الأسرة</a></li>
+          <li><a href="#services">قانون العمل</a></li>
+          <li><a href="#services">الدفاع الجنائي</a></li>
+          <li><a href="#services">المحاكم العسكرية وأمن الدولة</a></li>
+          <li><a href="#services">الاستشارات القانونية</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">معلومات الاتصال</div>
+        <div class="ft-citem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.97 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg><a href="tel:+962797983872">+962 79 798 3872</a></div>
+        <div class="ft-citem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>malekqaralleh21@gmail.com</span></div>
+        <div class="ft-citem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>الأردن</div>
+        <div class="ft-citem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>الأحد – الخميس: 9 ص – 5 م</div>
+        <div class="ft-social">
+          <a href="https://www.facebook.com/share/1AWmVpkU6N/" target="_blank" class="ft-social-btn" aria-label="فيسبوك">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/malek.qaralleh?igsh=MTZybHBuNWt5MHE1Nw==" target="_blank" class="ft-social-btn" aria-label="انستغرام">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2026 مكتب القرالة للقانون والتحكيم — جميع الحقوق محفوظة</div>
+      <div class="ft-disc">هذا الموقع لأغراض إعلامية فقط ولا يُشكّل مشورة قانونية. استخدام هذا الموقع لا يُنشئ علاقة محامٍ وموكل.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
+
+// MOBILE MENU
+document.getElementById('ham').onclick=()=>document.getElementById('mobMenu').classList.add('open');
+document.getElementById('mobClose').onclick=()=>document.getElementById('mobMenu').classList.remove('open');
+function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
+
+// FAQ
+function toggleFaq(el){
+  var isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
+
+// CAROUSEL
+var tCurrent=0;
+var tCards=document.querySelectorAll('.t-card');
+var tDots=document.querySelectorAll('.dot');
+function goSlide(n){
+  tCurrent=n;
+  var isMob=window.innerWidth<=768;
+  var perSlide=isMob?1:2;
+  var offset=tCurrent*perSlide*(tCards[0].offsetWidth+20);
+  document.getElementById('tTrack').style.transform='translateX(-'+offset+'px)';
+  tDots.forEach(function(d,i){d.classList.toggle('active',i===tCurrent)});
+}
+document.getElementById('tNext').onclick=function(){goSlide(tCurrent===1?0:1)};
+document.getElementById('tPrev').onclick=function(){goSlide(tCurrent===0?1:0)};
+
+// SCROLL ANIMATIONS
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fu').forEach(function(el){obs.observe(el)});
+
+// WHATSAPP FORM
+function sendWA(){
+  var name=document.getElementById('fName').value.trim();
+  var phone=document.getElementById('fPhone').value.trim();
+  var type=document.getElementById('fType').value;
+  var desc=document.getElementById('fDesc').value.trim();
+
+  // reset
+  ['fName','fPhone','fType','fDesc'].forEach(function(id){document.getElementById(id).classList.remove('err')});
+  ['eName','ePhone','eType','eDesc'].forEach(function(id){document.getElementById(id).classList.remove('show')});
+
+  var ok=true;
+  if(!name){document.getElementById('fName').classList.add('err');document.getElementById('eName').classList.add('show');ok=false;}
+  if(!phone||phone.replace(/\D/g,'').length<8){document.getElementById('fPhone').classList.add('err');document.getElementById('ePhone').classList.add('show');ok=false;}
+  if(!type){document.getElementById('fType').classList.add('err');document.getElementById('eType').classList.add('show');ok=false;}
+  if(!desc){document.getElementById('fDesc').classList.add('err');document.getElementById('eDesc').classList.add('show');ok=false;}
+  if(!ok)return;
+
+  var msg='🏛️ *طلب استشارة قانونية - مكتب القرالة*\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* '+name+'\n📞 *رقم الهاتف:* '+phone+'\n⚖️ *نوع القضية:* '+type+'\n━━━━━━━━━━━━━━━━━━\n📝 *تفاصيل المسألة:*\n'+desc+'\n━━━━━━━━━━━━━━━━━━\n_تم الإرسال عبر موقع مكتب القرالة_';
+
+  var btn=document.getElementById('waBtn');
+  btn.disabled=true;
+  btn.innerHTML='<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="animation:spin .8s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> جارٍ الفتح...';
+
+  setTimeout(function(){
+    window.open('https://wa.me/962797983872?text='+encodeURIComponent(msg),'_blank');
+    document.getElementById('formWrap').style.display='none';
+    document.getElementById('successBox').classList.add('show');
+  },700);
+}
+
+function resetForm(){
+  document.getElementById('formWrap').style.display='block';
+  document.getElementById('successBox').classList.remove('show');
+  document.getElementById('fName').value='';
+  document.getElementById('fPhone').value='';
+  document.getElementById('fType').value='';
+  document.getElementById('fDesc').value='';
+  var btn=document.getElementById('waBtn');
+  btn.disabled=false;
+  btn.innerHTML='<svg width="19" height="19" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.104 1.51 5.833L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.979.992-3.62-.234-.373A9.818 9.818 0 1112 21.818z"/></svg> إرسال عبر واتساب مباشرةً';
+}
+
+var s=document.createElement('style');
+s.textContent='@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}';
+document.head.appendChild(s);
+</script>
+</body>
+</html>
